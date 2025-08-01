@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Idioma - The Future of Engagement</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        // Simple Intersection Observer for scroll animations
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #101010;
+            color: #ffffff;
+        }
+        .section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 8rem 1rem;
+            border-bottom: 1px solid #222;
+            overflow: hidden;
+        }
+        .netflix-red { color: #E50914; }
+        .netflix-red-bg { background-color: #E50914; }
+        
+        /* Animation styles */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .animate-on-scroll.delay-1 { transition-delay: 0.2s; }
+        .animate-on-scroll.delay-2 { transition-delay: 0.4s; }
+        .animate-on-scroll.delay-3 { transition-delay: 0.6s; }
+
+        .poster-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            transform: rotate(-5deg) scale(1.1);
+        }
+        @media (min-width: 768px) {
+            .poster-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        .poster-grid img {
+            border-radius: 0.5rem;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.6);
+            transition: transform 0.3s ease;
+        }
+        .chart-bar {
+            transform-origin: bottom;
+            transform: scaleY(0);
+            transition: transform 1s ease-out;
+        }
+        .animate-on-scroll.visible .chart-bar {
+            transform: scaleY(1);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Section 1: Title Slide -->
+    <section id="home" class="section relative">
+        <div class="absolute inset-0 z-0 opacity-10 blur-sm">
+            <div class="poster-grid mx-auto">
+                <img src="https://placehold.co/300x450/E50914/FFFFFF?text=Show+1" alt="Show Poster 1">
+                <img src="https://placehold.co/300x450/141414/FFFFFF?text=Show+2" alt="Show Poster 2">
+                <img src="https://placehold.co/300x450/141414/FFFFFF?text=Show+3" alt="Show Poster 3">
+                <img src="https://placehold.co/300x450/E50914/FFFFFF?text=Show+4" alt="Show Poster 4">
+            </div>
+        </div>
+        <div class="text-center z-10 bg-black bg-opacity-60 p-8 rounded-lg animate-on-scroll">
+            <h1 class="text-4xl md:text-7xl font-black uppercase tracking-tighter">The Future of Engagement</h1>
+            <h2 class="text-3xl md:text-6xl font-black uppercase tracking-tighter netflix-red mt-2">Learn Languages with Netflix</h2>
+            <p class="mt-6 text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto">
+                Unlock a new language with every episode.
+            </p>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <a href="#challenge" aria-label="Scroll down">
+                <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Section 2: The Engagement Challenge -->
+    <section id="challenge" class="section">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight animate-on-scroll">
+                Netflix has Mastered Streaming.
+                <br>
+                <span class="netflix-red">Now, Let's Master Retention.</span>
+            </h2>
+            <div class="mt-8 text-lg md:text-xl text-gray-300 space-y-6">
+                <p class="animate-on-scroll delay-1">Netflix is the undisputed market leader, but the entire industry faces the core challenge of subscriber churn. Users pause or cancel when they aren't actively watching.</p>
+                <p class="font-bold text-white animate-on-scroll delay-2"><span class="netflix-red">Netflix Games</span> was a brilliant first step in solving this, proving that interactive content increases engagement.</p>
+                <p class="text-2xl font-bold text-white pt-4 animate-on-scroll delay-3">So, what's the next frontier for engagement?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: The Untapped Goldmine -->
+    <section id="goldmine" class="section">
+        <div class="text-center max-w-4xl mx-auto">
+             <h2 class="text-3xl md:text-5xl font-bold tracking-tight animate-on-scroll">
+                The World's Best Language Tool is
+                <br>
+                <span class="netflix-red">Already in Your Library.</span>
+            </h2>
+            <div class="mt-8 text-lg md:text-xl text-gray-300 space-y-6">
+                <blockquote class="border-l-4 border-red-600 pl-6 py-2 italic text-2xl text-white my-8 animate-on-scroll delay-1">
+                    "Ask self-taught bilinguals how they learned. The answer is never an app. It's: 'I watched Friends in English growing up.'"
+                </blockquote>
+                <p class="animate-on-scroll delay-2">Millions of people are already using Netflix to learn languages, but the process is hard, inefficient, and lacks structure.</p>
+                <p class="font-bold text-white text-2xl animate-on-scroll delay-3">This is a massive, organic user behavior that Netflix can harness and own.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Introducing Netflix Idioma -->
+    <section id="introducing" class="section">
+        <div class="text-center max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight animate-on-scroll">Introducing <span class="netflix-red">Netflix Idioma</span></h2>
+            <p class="mt-4 text-xl text-gray-300 animate-on-scroll delay-1">Learn Language - From the Content You Love.</p>
+            
+            <!-- UI Mockup built with HTML/CSS -->
+            <div class="mt-12 bg-black rounded-xl shadow-2xl overflow-hidden border-2 border-gray-800 animate-on-scroll delay-2">
+                <img src="https://images.indianexpress.com/2021/08/money-heist-professor-1200.jpg?w=640" alt="Show main image" class="w-full">
+                <div class="p-8 text-left">
+                    <h3 class="text-4xl font-bold">Money Heist</h3>
+                    <div class="flex items-center space-x-4 mt-6">
+                        <button class="flex-grow flex items-center justify-center bg-white text-black font-bold py-3 px-6 rounded text-lg hover:bg-gray-200 transition">
+                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            Play
+                        </button>
+                        <button class="flex-grow flex items-center justify-center netflix-red-bg text-white font-bold py-3 px-6 rounded text-lg hover:bg-red-700 transition">
+                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C3.732 4.943 9.522 3 10 3s6.268 1.943 9.542 7c-3.274 5.057-9.064 7-9.542 7S3.732 15.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg>
+                            Idioma
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 5: How It Works (Viewing Experience) -->
+    <section id="viewing-experience" class="section">
+        <div class="text-center max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight animate-on-scroll">The Viewing Experience</h2>
+            <p class="mt-4 text-xl text-gray-300 animate-on-scroll delay-1">A simple, powerful, virtuous cycle.</p>
+            <div class="mt-12 grid md:grid-cols-3 gap-8 text-left">
+                <!-- PREP -->
+                <div class="bg-gray-900 p-6 rounded-lg animate-on-scroll delay-1">
+                    <h3 class="text-2xl font-bold netflix-red">1. PREP</h3>
+                    <p class="mt-4 text-lg text-gray-300">Before the episode, tackle mini-tests on challenging vocabulary and phrases that will appear.</p>
+                </div>
+                <!-- WATCH -->
+                <div class="bg-gray-900 p-6 rounded-lg animate-on-scroll delay-2">
+                    <h3 class="text-2xl font-bold netflix-red">2. WATCH</h3>
+                    <p class="mt-4 text-lg text-gray-300">Enjoy on TV while using your phone for instant translations or cross-device practice.</p>
+                </div>
+                <!-- PRACTICE -->
+                <div class="bg-gray-900 p-6 rounded-lg animate-on-scroll delay-3">
+                    <h3 class="text-2xl font-bold netflix-red">3. PRACTICE</h3>
+                    <p class="mt-4 text-lg text-gray-300">After, get fun, bite-sized lessons and games based on the exact scenes you just saw.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: How It Works (Daily Habit) -->
+    <section id="daily-habit" class="section bg-black">
+        <div class="text-center max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight animate-on-scroll">The Daily Habit</h2>
+            <p class="mt-4 text-xl text-gray-300 animate-on-scroll delay-1">Acquiring a new language is an endeavor of thousands of days of activity.</p>
+            <div class="mt-12 text-left bg-gray-900 p-8 rounded-xl shadow-2xl animate-on-scroll delay-2">
+                <p class="text-lg text-gray-200">More than just understanding specific content, the <strong class="text-white">entire Netflix library becomes the language-training material</strong>. The user personalizes their experience by selecting content of interest, which feeds exercises, lessons, tests, and an interactive dictionary spanning the entire target language.</p>
+                <p class="mt-4 text-lg font-bold text-white">Users track fluency, unlock achievements, and maintain their <span class="netflix-red">daily streak</span>, turning learning into a rewarding, long-term habit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7 & 8: Why We Win & Advantage -->
+    <section id="why-we-win" class="section">
+        <div class="text-center max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight animate-on-scroll">Why Netflix Idioma Wins</h2>
+            <div class="mt-12 grid md:grid-cols-2 gap-12 text-left">
+                <div class="animate-on-scroll delay-1">
+                    <h3 class="text-2xl font-bold">Real Content vs. Digital Textbooks</h3>
+                    <p class="mt-4 text-lg text-gray-300">People don't want to learn "The cheese is red." They want to understand <em>The Professor</em>.</p>
+                    <div class="mt-4 p-4 border border-red-600 rounded-lg">
+                        <p><strong class="netflix-red">Netflix Idioma:</strong> Real emotion, real context, real language from beloved shows. Learning is powered by intrinsic motivation.</p>
+                    </div>
+                </div>
+                <div class="animate-on-scroll delay-2">
+                    <h3 class="text-2xl font-bold">The Unfair Advantage</h3>
+                     <ul class="mt-4 space-y-2 text-lg text-gray-300 list-disc list-inside">
+                        <li><strong class="text-white">Premium IP as Context:</strong> Learn within the worlds of <em>Stranger Things</em> or <em>Bridgerton</em>.</li>
+                        <li><strong class="text-white">True Immersion:</strong> A world away from flashcard drills.</li>
+                        <li><strong class="text-white">Seamless Integration:</strong> Zero extra downloads; built into the viewing experience.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 9: Market Size -->
+    <section id="market" class="section bg-black">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight animate-on-scroll">A Billion-User Market is Waiting</h2>
+            <p class="mt-4 text-xl text-gray-300 animate-on-scroll delay-1">The language learning market is massive and underserved by engaging content.</p>
+            <div class="mt-8 bg-gray-900 p-8 rounded-xl shadow-2xl w-full animate-on-scroll delay-2">
+                <!-- Coded Chart -->
+                <div class="space-y-8">
+                    <!-- Market Cap Bar -->
+                    <div>
+                        <div class="flex justify-between items-end mb-1">
+                            <h3 class="text-lg font-bold text-gray-300">Market Capitalization</h3>
+                            <p class="text-2xl font-black text-white">~$17 Billion</p>
+                        </div>
+                        <div class="h-12 w-full bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full netflix-red-bg rounded-full chart-bar" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <!-- MAU Bar -->
+                    <div>
+                        <div class="flex justify-between items-end mb-1">
+                            <h3 class="text-lg font-bold text-gray-300">Monthly Active Users</h3>
+                            <p class="text-2xl font-black text-white">~100 Million</p>
+                        </div>
+                        <div class="h-12 w-full bg-gray-700 rounded-full overflow-hidden">
+                            <div class="h-full netflix-red-bg rounded-full chart-bar" style="width: 60%; transition-delay: 0.2s;"></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-8 text-center text-lg">Duolingo's success proves the demand. Their weakness—lack of engaging content—is our greatest strength.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 10: The Magic (AI Engine) -->
+    <section id="magic" class="section">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight animate-on-scroll">The Magic: Our Proprietary AI Engine</h2>
+            <p class="mt-4 text-xl text-gray-300 animate-on-scroll delay-1">Over 4 years, we’ve honed a content-to-language-learning engine that turns entertainment into education, instantly.</p>
+            <ul class="mt-8 text-left text-lg space-y-4">
+                <li class="bg-gray-900 p-4 rounded-lg animate-on-scroll delay-1">Turns any TV series into unlimited exercises, lessons, and tests.</li>
+                <li class="bg-gray-900 p-4 rounded-lg animate-on-scroll delay-2">Dynamically adjusts difficulty to the user’s proficiency.</li>
+                <li class="bg-gray-900 p-4 rounded-lg animate-on-scroll delay-3">Identifies the most "didactic" clips to make learning effortless.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section 11 & 12: Flywheel & Streaks -->
+    <section id="flywheel" class="section bg-black">
+        <div class="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div class="text-center md:text-left animate-on-scroll">
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight">The Flywheel of Engagement</h2>
+                <p class="mt-4 text-xl text-gray-300">Deeper engagement, lower churn, and more watch time.</p>
+                <img src="https://i.ibb.co/fdkBzSr8/flywheel-diagram.png" alt="Engagement Flywheel" class="mt-8 w-full max-w-md mx-auto">
+            </div>
+            <div class="animate-on-scroll delay-1">
+                 <h3 class="text-2xl font-bold text-center md:text-left">Daily Streaks & IP Cross-Promotion</h3>
+                 <p class="mt-4 text-lg text-gray-300 text-center md:text-left">A daily reminder to maintain a streak brings users into the Netflix app, even when they aren't planning a movie night.</p>
+                 <!-- Phone Notification Mockup -->
+                 <div class="mt-8 mx-auto max-w-sm bg-gray-900 border-4 border-gray-700 rounded-3xl p-4 shadow-2xl">
+                    <div class="flex items-start space-x-3">
+                        <div class="netflix-red-bg w-10 h-10 rounded-lg flex items-center justify-center font-bold text-2xl">N</div>
+                        <div>
+                            <p class="font-bold text-white">Netflix</p>
+                            <p class="text-gray-300">now</p>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <p class="font-bold">Don't lose your 5-day streak!</p>
+                        <p>A quick 5-minute lesson on <em>The Crown</em> is waiting.</p>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 13 & 14: Vision & Proposal -->
+    <section id="proposal" class="section">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight animate-on-scroll">Netflix: Watch, Play, <span class="netflix-red">Learn</span>.</h2>
+            <p class="mt-4 text-xl text-gray-300 animate-on-scroll delay-1">Netflix Idioma completes the ecosystem, transforming passive consumption into active engagement and making the platform an indispensable part of a user's daily life.</p>
+            <div class="mt-12 text-left bg-gray-900 p-8 rounded-xl shadow-2xl animate-on-scroll delay-2">
+                <h3 class="text-2xl font-bold netflix-red">The Proposal</h3>
+                <p class="mt-4 text-lg">Our technology is ready. We have spent 4 years building a robust engine that can index millions of video clips and instantly generate language learning material for any skill level. We are seeking a partnership to integrate this white-label solution fully into the Netflix platform.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 15: Contact -->
+    <section id="contact" class="section border-b-0 bg-black">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold animate-on-scroll">Thank You.</h2>
+            <p class="mt-4 text-2xl animate-on-scroll delay-1">Let's set up a call for an all-feature fully-functioning demo.</p>
+            <div class="mt-8 animate-on-scroll delay-2">
+                <p class="text-xl font-bold">Chris Martin</p>
+                <a href="mailto:chris@wordbox.ai" class="text-xl netflix-red hover:underline">chris@wordbox.ai</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
