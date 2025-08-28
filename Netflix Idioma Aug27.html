@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Idioma - Pitch Deck (Direct)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        // Simple Intersection Observer for scroll animations.
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #101010;
+            color: #ffffff;
+        }
+        .section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 6rem 1rem;
+            border-bottom: 1px solid #222;
+            overflow: hidden;
+        }
+        .netflix-red { color: #E50914; }
+        .netflix-red-bg { background-color: #E50914; }
+        
+        /* Animation styles */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .animate-on-scroll.delay-1 { transition-delay: 0.2s; }
+        .animate-on-scroll.delay-2 { transition-delay: 0.4s; }
+        .animate-on-scroll.delay-3 { transition-delay: 0.6s; }
+
+        /* Poster grid for title slide */
+        .poster-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            transform: rotate(-5deg) scale(1.1);
+        }
+        @media (min-width: 768px) {
+            .poster-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+        .poster-grid img {
+            border-radius: 0.5rem;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.6);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Cover Page -->
+    <section id="home" class="section relative">
+        <div class="absolute inset-0 z-0 opacity-10 blur-sm">
+            <div class="poster-grid mx-auto">
+                <img src="https://wordboximagesapp.storage.googleapis.com/series/STRANGER_THINGS.jpg" alt="Stranger Things Poster" onerror="this.onerror=null;this.src='https://placehold.co/300x450/000000/E50914?text=Error';">
+                <img src="https://wordboximagesapp.storage.googleapis.com/series/BREAKING_BAD.jpg" alt="Breaking Bad Poster" onerror="this.onerror=null;this.src='https://placehold.co/300x450/000000/E50914?text=Error';">
+                <img src="https://wordboximagesapp.storage.googleapis.com/series/SUITS.jpg" alt="Suits Poster" onerror="this.onerror=null;this.src='https://placehold.co/300x450/000000/E50914?text=Error';">
+                <img src="https://wordboximagesapp.storage.googleapis.com/series/MAD_MEN.jpg" alt="Mad Men Poster" onerror="this.onerror=null;this.src='https://placehold.co/300x450/000000/E50914?text=Error';">
+            </div>
+        </div>
+        <div class="text-center z-10 bg-black bg-opacity-60 p-8 rounded-lg animate-on-scroll">
+            <h1 class="text-4xl md:text-7xl font-black tracking-tighter">Watch. Play. <span class="netflix-red">Learn.</span></h1>
+            <h2 class="text-3xl md:text-6xl font-black uppercase tracking-tighter netflix-red mt-2">Learn Languages with Netflix</h2>
+            <p class="mt-6 text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto">Unlock a new language with the content you love.</p>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <a href="#market" aria-label="Scroll down">
+                <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Market Size -->
+    <section id="market" class="section">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight animate-on-scroll">The Language Market is <span class="netflix-red">HUGE</span></h2>
+            <ul class="mt-8 text-lg md:text-xl text-left space-y-4 max-w-2xl mx-auto">
+                <li class="bg-gray-900 p-4 rounded-lg animate-on-scroll delay-1">Est. <strong class="text-white">$100BN</strong> value with 20% CAGR, expected to reach <strong class="text-white">$500BN</strong> by 2034.</li>
+                <li class="bg-gray-900 p-4 rounded-lg animate-on-scroll delay-2">Duolingo has proven consistent engagement with <strong class="text-white">50M daily active users</strong> (130M MAU).</li>
+                <li class="bg-gray-900 p-4 rounded-lg animate-on-scroll delay-3"><strong class="text-white">3.5BN people</strong> could change their lives and multiply their income by learning English.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Daily Habit -->
+    <section id="habit" class="section bg-black">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight animate-on-scroll">Language Acquisition is a <span class="netflix-red">Daily Habit</span> and a <span class="netflix-red">Multi-Year Endeavor</span></h2>
+            <div class="mt-8 text-lg md:text-xl text-gray-300 animate-on-scroll delay-1">
+                <p class="text-6xl font-black netflix-red">1,000+ days</p>
+                <p class="mt-2 text-2xl font-bold">Of consistent interaction are typically required to reach fluency.</p>
+                <p class="mt-4">This isn't a one-off game; it's a long-term habit that becomes part of a user's daily life.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Duolingo Critique -->
+    <section id="duolingo-critique" class="section">
+        <div class="text-center max-w-5xl mx-auto">
+            <div class="animate-on-scroll">
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Duolingo doesn’t work...</h2>
+                <p class="mt-4 text-2xl text-gray-300">...the Material isn't <span class="netflix-red">REAL</span></p>
+                <p class="mt-2 text-2xl text-gray-300">...nor personal, interesting or relevant.</p>
+            </div>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center animate-on-scroll delay-1">
+                <img src="https://wordbox-ai.github.io/CM-netflix/Capture_Duolingo_Fruit_Questions.png" alt="Duolingo Fruit Questions" class="rounded-lg shadow-xl mx-auto" style="max-height: 400px;" onerror="this.onerror=null;this.src='https://placehold.co/400x400/000000/FFFFFF?text=Image+Not+Found';">
+                <img src="https://wordbox-ai.github.io/CM-netflix/Capture_Duolingo_were_different.png" alt="Duolingo Example" class="rounded-lg shadow-xl mx-auto" style="max-height: 400px;" onerror="this.onerror=null;this.src='https://placehold.co/400x400/000000/FFFFFF?text=Image+Not+Found';">
+            </div>
+            <div class="mt-12 border-t-2 border-gray-700 pt-8 animate-on-scroll delay-2">
+                 <p class="text-2xl text-gray-300">...The study plans are generic <span class="text-4xl">🤔</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learned through Content -->
+    <section id="content" class="section bg-black">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+             <div class="text-center md:text-left animate-on-scroll">
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Language is Learned Through <span class="netflix-red">CONTENT</span></h2>
+                <div class="mt-8 text-lg md:text-xl text-gray-300 space-y-4">
+                    <p>We practice by speaking and writing, but we <strong class="text-white">*learn*</strong> by consuming content.</p>
+                    <p class="text-2xl font-bold">[Consumption] : [Practice] should be at <span class="netflix-red">90:10</span> ratios.</p>
+                    <p>Transitioning from dubbed to original language content is the main driver of fluency.</p>
+                </div>
+            </div>
+            <div class="animate-on-scroll delay-1">
+                <img src="https://wordboximagesapp.storage.googleapis.com/series/House_of_Cards.jpg" alt="House of Cards" class="rounded-lg shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/600x400/000000/E50914?text=Error';">
+            </div>
+        </div>
+    </section>
+
+    <!-- Goldmine -->
+    <section id="goldmine" class="section">
+        <div class="text-center max-w-4xl mx-auto">
+             <h2 class="text-3xl md:text-5xl font-bold tracking-tight animate-on-scroll">
+                The World's Best Language Tool is
+                <br>
+                <span class="netflix-red">Already in Your Library.</span>
+            </h2>
+            <div class="mt-8 text-lg md:text-xl text-gray-300 space-y-6">
+                <blockquote class="border-l-4 border-red-600 pl-6 py-2 italic text-2xl text-white my-8 animate-on-scroll delay-1">
+                    "Ask self-taught bilinguals how they learned. The answer is never an app. It's: 'I watched Friends in English growing up.'"
+                </blockquote>
+                <p class="animate-on-scroll delay-2">Millions of people are already using Netflix to learn languages, but the process is hard, inefficient, and lacks structure.</p>
+                <p class="font-bold text-white text-2xl animate-on-scroll delay-3">This is a massive, organic user behavior that Netflix can harness and own.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Mode 1 -->
+    <section id="mode1" class="section bg-black">
+        <div class="text-center max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight animate-on-scroll">Learning Mode 1: <span class="netflix-red">User-Centric</span></h2>
+            <p class="mt-4 text-xl text-gray-300 animate-on-scroll delay-1"><span class="netflix-red font-bold">Mastering</span> the language of your favorite shows.</p>
+            <div class="mt-8 grid md:grid-cols-2 gap-8 items-center">
+                <div class="animate-on-scroll delay-2">
+                    <img src="https://wordbox-ai.github.io/CM-netflix/Screenshot_Fluent.jpg" alt="User-centric learning interface" class="rounded-lg shadow-2xl max-w-sm mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/600x400/000000/E50914?text=Error';">
+                </div>
+                <div class="text-left">
+                    <p class="text-lg text-gray-200 animate-on-scroll delay-3">A purely independent experience that takes the user from the easiest (most-frequent) to the hardest (least-frequent) words, phrases, and grammar.</p>
+                    <p class="mt-4 text-lg text-gray-200 animate-on-scroll delay-3">By completing this path, the user will ultimately understand <strong class="text-white">every single linguistic element</strong> in their favorite series.</p>
+                    <div class="mt-6 grid grid-cols-3 gap-4 text-center w-full animate-on-scroll delay-3">
+                        <div class="bg-gray-800 p-3 rounded-lg"><p class="font-bold text-white text-sm">30,000 words</p></div>
+                        <div class="bg-gray-800 p-3 rounded-lg"><p class="font-bold text-white text-sm">3,000 phrases</p></div>
+                        <div class="bg-gray-800 p-3 rounded-lg"><p class="font-bold text-white text-sm">All grammatical patterns</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mode 2 -->
+    <section id="mode2" class="section">
+        <div class="text-center max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight animate-on-scroll">Learning Mode 2: <span class="netflix-red">Episode-Centric</span></h2>
+            <div class="mt-12 grid md:grid-cols-3 gap-8 text-left w-full">
+                <div class="bg-gray-900 p-6 rounded-lg animate-on-scroll delay-1">
+                    <h3 class="text-2xl font-bold netflix-red">PREP</h3>
+                    <p class="mt-4 text-lg text-gray-300">Before an episode, tackle key words to reduce friction and maximize enjoyment.</p>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg animate-on-scroll delay-2">
+                    <h3 class="text-2xl font-bold netflix-red">WATCH</h3>
+                    <p class="mt-4 text-lg text-gray-300">Enjoy the show with seamless, integrated learning tools on any device.</p>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg animate-on-scroll delay-3">
+                    <h3 class="text-2xl font-bold netflix-red">REVISE</h3>
+                    <p class="mt-4 text-lg text-gray-300">After an episode, cement your understanding with exercises from the scenes you just saw.</p>
+                </div>
+            </div>
+             <div class="mt-8 w-full max-w-lg animate-on-scroll delay-2">
+                <div class="bg-black rounded-xl shadow-2xl overflow-hidden border-2 border-gray-800">
+                    <img src="https://images.indianexpress.com/2021/08/money-heist-professor-1200.jpg?w=640" alt="Show main image" class="w-full" onerror="this.onerror=null;this.src='https://placehold.co/640x360/000000/E50914?text=Error';">
+                    <div class="p-6 text-left">
+                        <h3 class="text-2xl font-bold">Money Heist</h3>
+                        <div class="flex items-center space-x-4 mt-4">
+                            <button class="w-full flex items-center justify-center bg-white text-black font-bold py-2 px-4 rounded text-md hover:bg-gray-200 transition">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                Play
+                            </button>
+                            <button class="w-full flex items-center justify-center netflix-red-bg text-white font-bold py-2 px-4 rounded text-md hover:bg-red-700 transition">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C3.732 4.943 9.522 3 10 3s6.268 1.943 9.542 7c-3.274 5.057-9.064 7-9.542 7S3.732 15.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg>
+                                Idioma
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Magic AI Engine -->
+    <section id="magic" class="section bg-black">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight animate-on-scroll">The Magic: Our Proprietary AI Engine</h2>
+            <p class="mt-4 text-xl text-gray-300 animate-on-scroll delay-1">Over 4 years, we’ve honed a content-to-language-learning engine that turns entertainment into education, instantly.</p>
+            <ul class="mt-8 text-left text-lg space-y-4">
+                <li class="bg-gray-900 p-4 rounded-lg animate-on-scroll delay-1">Turns any TV series into unlimited exercises, lessons, and tests.</li>
+                <li class="bg-gray-900 p-4 rounded-lg animate-on-scroll delay-2">Dynamically adjusts difficulty to the user’s proficiency.</li>
+                <li class="bg-gray-900 p-4 rounded-lg animate-on-scroll delay-3">Identifies the most "didactic" clips to make learning effortless.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Effective 1: Relevance -->
+    <section id="effective-relevance" class="section">
+        <div class="text-center max-w-4xl mx-auto">
+            <p class="text-xl text-gray-400 font-bold tracking-wider uppercase animate-on-scroll">The Most Effective Way to Learn</p>
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight mt-2 animate-on-scroll">Learn what you consume, <span class="netflix-red">Consume what you've learned</span></h2>
+            <div class="mt-8 flex items-center justify-center space-x-2 animate-on-scroll delay-1 relative" style="height: 100px;">
+                <div class="p-6 bg-gray-900 rounded-lg text-center">
+                    <p class="text-2xl font-bold tracking-tight">Learn</p>
+                </div>
+                <svg class="absolute w-48 h-48 text-red-600" viewBox="0 0 100 100">
+                    <path d="M 75,35 A 25,25 0 0 0 50,10" fill="none" stroke-width="6" stroke="currentColor"/>
+                    <path d="M 50,10 L 50,25 L 65,17 Z" fill="currentColor"/>
+                    <path d="M 25,65 A 25,25 0 0 0 50,90" fill="none" stroke-width="6" stroke="currentColor"/>
+                    <path d="M 50,90 L 50,75 L 35,83 Z" fill="currentColor"/>
+                </svg>
+                <div class="p-6 bg-gray-900 rounded-lg text-center">
+                    <p class="text-2xl font-bold tracking-tight">Consume</p>
+                </div>
+            </div>
+            <p class="mt-8 text-lg md:text-xl text-gray-300 animate-on-scroll delay-2">Unlike apps and school books, you don’t learn things that you aren’t sure if you’ll ever use. Every lesson is immediately applicable.</p>
+        </div>
+    </section>
+
+    <!-- Effective 2: Retention -->
+    <section id="effective-retention" class="section bg-black">
+        <div class="text-center max-w-4xl mx-auto">
+            <p class="text-xl text-gray-400 font-bold tracking-wider uppercase animate-on-scroll">The Most Effective Way to Learn</p>
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight mt-2 animate-on-scroll">Familiar Content <span class="netflix-red">Maximizes Retention</span></h2>
+            <p class="mt-4 text-xl text-gray-300 animate-on-scroll delay-1">Cognitive psychology shows that new information "sticks" better when it connects to familiar concepts.</p>
+            <ul class="mt-8 text-lg md:text-xl text-left list-disc list-inside space-y-2 max-w-md mx-auto animate-on-scroll delay-2">
+                <li>Familiar characters and storylines</li>
+                <li>Repeating accents, phrases, and keywords</li>
+                <li>Emotional, exciting, and memorable scenes</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Effective 3: Reward -->
+    <section id="effective-reward" class="section">
+        <div class="text-center max-w-4xl mx-auto">
+            <p class="text-xl text-gray-400 font-bold tracking-wider uppercase animate-on-scroll">The Most Effective Way to Learn</p>
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight mt-2 animate-on-scroll">Immediate <span class="netflix-red">Rewards</span></h2>
+            <p class="mt-4 text-xl text-gray-300 animate-on-scroll delay-1">Users are motivated by the ultimate prize: understanding their favorite content.</p>
+            <div class="mt-8 grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-900 p-6 rounded-lg animate-on-scroll delay-2">
+                    <h3 class="text-2xl font-bold">Immediate Application</h3>
+                    <p class="mt-2 text-lg text-gray-300">Users immediately get to watch the series/film in their new language.</p>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg animate-on-scroll delay-3">
+                    <h3 class="text-2xl font-bold">Clear Sense of Achievement</h3>
+                    <p class="mt-2 text-lg text-gray-300">Understanding your favorite shows is a powerful, intrinsic reward.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Increasing Activation -->
+    <section id="activation" class="section bg-black">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight animate-on-scroll">Increasing <span class="netflix-red">Activation on Netflix</span></h2>
+            <ul class="mt-8 text-lg md:text-xl text-left space-y-4 max-w-2xl mx-auto">
+                <li class="bg-gray-900 p-4 rounded-lg animate-on-scroll delay-1">Grows <strong class="text-white">Mobile-first usage</strong>, creating more daily touchpoints.</li>
+                <li class="bg-gray-900 p-4 rounded-lg animate-on-scroll delay-2">Creates <strong class="text-white">longer, higher-frequency habits</strong> than binge-watching a series.</li>
+                <li class="bg-gray-900 p-4 rounded-lg animate-on-scroll delay-3">Cross-promotes new and existing IP <strong class="text-white">organically</strong>.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Reducing Churn (Revisited) -->
+    <section id="churn2" class="section">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+             <div class="text-center md:text-left animate-on-scroll">
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Reducing <span class="netflix-red">Netflix Churn</span></h2>
+                <div class="mt-8 text-lg md:text-xl text-gray-300 space-y-6">
+                    <p>Subscribers, especially families, won't pause subscriptions if it means losing their learning streaks and progress.</p>
+                    <p class="font-bold text-white text-2xl">Netflix ("Watch. Play. <span class="netflix-red">LEARN.</span>") differentiates from all other streaming platforms.</p>
+                </div>
+            </div>
+            <div class="animate-on-scroll delay-1">
+                <div class="bg-gray-900 p-4 rounded-lg italic">
+                    <p class="text-lg text-gray-400 text-center md:text-left">A daily reminder to maintain a streak brings users into the Netflix app, even when they aren't planning a movie night.</p>
+                </div>
+                 <!-- Phone Notification Mockup -->
+                 <div class="mt-4 mx-auto max-w-sm bg-gray-800 border-4 border-gray-700 rounded-3xl p-4 shadow-2xl">
+                    <div class="flex items-start space-x-3">
+                        <div class="netflix-red-bg w-10 h-10 rounded-lg flex items-center justify-center font-bold text-2xl">N</div>
+                        <div>
+                            <p class="font-bold text-white">Netflix</p>
+                            <p class="text-gray-300">now</p>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <p class="font-bold">Don't lose your 5-day streak!</p>
+                        <p>A quick 5-minute lesson on <em>The Crown</em> is waiting.</p>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IP Cross-Promotion -->
+    <section id="cross-promo" class="section bg-black">
+        <div class="text-center max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight animate-on-scroll">Seamless <span class="netflix-red">IP Cross-Promotion</span></h2>
+            <div class="mt-8 grid md:grid-cols-2 gap-8 items-center">
+                <div class="text-left animate-on-scroll delay-1">
+                    <p class="text-lg text-gray-200">In the User-centric learning game, content from the user's favorites is prioritized, but <strong class="text-white">similar, suggested content</strong> will also feed the experience.</p>
+                    <p class="mt-4 text-lg text-gray-200">Users will learn through clips of known series, reminding them of what they loved and driving them to <strong class="text-white">watch again</strong>.</p>
+                </div>
+                <div class="flex items-center justify-center space-x-4 animate-on-scroll delay-2">
+                    <img src="https://wordboximagesapp.storage.googleapis.com/series/BREAKING_BAD.jpg" alt="Breaking Bad" class="rounded-lg shadow-xl w-40" onerror="this.onerror=null;this.src='https://placehold.co/160x240/000000/E50914?text=Error';">
+                    <svg class="w-12 h-12 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    <img src="https://wordboximagesapp.storage.googleapis.com/series/Better_Call_Saul.jpg" alt="Better Call Saul" class="rounded-lg shadow-xl w-40" onerror="this.onerror=null;this.src='https://placehold.co/160x240/000000/E50914?text=Error';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section id="roadmap" class="section">
+        <div class="text-center max-w-4xl mx-auto">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tight animate-on-scroll">Roadmap: <span class="netflix-red">The Technology is Ready</span></h2>
+            <div class="mt-12 text-left space-y-6">
+                <div class="bg-gray-900 p-6 rounded-lg animate-on-scroll delay-1">
+                    <h3 class="text-xl font-bold text-white">2026/Q1</h3>
+                    <p class="mt-1 text-lg text-gray-300">Learn English for 20 base languages, 100 top TV Series</p>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg animate-on-scroll delay-2">
+                    <h3 class="text-xl font-bold text-white">2026/Q2</h3>
+                    <p class="mt-1 text-lg text-gray-300">Expand to 30 base languages, 500 top TV Series, 2000 top films</p>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-lg animate-on-scroll delay-3">
+                    <h3 class="text-xl font-bold text-white">2026-2027</h3>
+                    <p class="mt-1 text-lg text-gray-300">Launch learning for: English, Spanish, French, Korean, Japanese, Chinese, Portuguese, Italian, & German</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Slide -->
+    <section id="contact" class="section border-b-0">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-7xl font-black tracking-tighter animate-on-scroll">Watch. Play. <span class="netflix-red">Learn.</span></h1>
+            <div class="mt-12 animate-on-scroll delay-1">
+                <p class="text-xl font-bold">Chris Martin</p>
+                <a href="mailto:chris@wordbox.ai" class="text-xl netflix-red hover:underline">chris@wordbox.ai</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
